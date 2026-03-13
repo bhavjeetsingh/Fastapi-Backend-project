@@ -4,6 +4,12 @@ from app.db import Post, create_db_and_tables, get_async_session
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
 from sqlalchemy import select
+from app.images import imagekit
+from imagekitio.types.file_upload_params import FileUploadParams
+import os
+import shutil
+import uuid
+import tempfile
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -17,6 +23,10 @@ async def upload_file(
     caption: str = Form(''),
     session: AsyncSession = Depends(get_async_session)
 ):
+    temp_file_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(delete=False)
     post= Post(
         caption=caption,
         url='dummy url',
