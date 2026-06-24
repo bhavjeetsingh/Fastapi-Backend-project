@@ -1,0 +1,20 @@
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+
+# Database
+sqlalchemy>=2.0.0
+aiosqlite>=0.21.0
+
+# Auth (includes sqlalchemy integration)
+fastapi-users[sqlalchemy]>=13.0.0
+
+# File uploads (required for FastAPI Form / File)
+python-multipart>=0.0.20
+
+# ImageKit SDK
+imagekitio>=5.2.0
+
+# Pydantic & environment
+pydantic>=2.0.0
+python-dotenv>=1.0.0
